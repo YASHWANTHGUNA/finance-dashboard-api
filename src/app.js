@@ -15,9 +15,13 @@ app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/users', userRoutes);
 
 // Health check
-app.get('/', (req, res) => {
-  res.json({ message: 'Finance Dashboard API is running' });
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Finance Dashboard API is live 🚀",
+  });
 });
+
 
 // 404 Handler
 app.use((req, res) => {
